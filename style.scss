@@ -1,4 +1,12 @@
+@use 'variables';
 * {
     margin: 0;
     box-sizing: border-box;
+}
+.header {
+    .logo {
+        width: 250px;
+        height: 100px;
+        background-image: url(images/post-itlogo.png);
+    }
 }
