@@ -3,8 +3,40 @@
   box-sizing: border-box;
 }
 
-.header .logo {
-  width: 250px;
-  height: 100px;
+header {
+  margin-top: 20px;
+}
+header .logo {
+  width: 200px;
+  height: 80px;
   background-image: url(images/post-itlogo.png);
+  background-size: 100% 100%;
+}
+header .search {
+  width: 700px;
+  height: 50px;
+  margin-top: 15px;
+}
+header .search #pagesearch {
+  border: 1px solid rgb(241, 241, 241);
+  border-radius: 30px;
+}
+header .account {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid rgb(200, 200, 200);
+}
+header .account .profile-picture {
+  width: 50px;
+  aspect-ratio: 1/1;
+  background-image: url(images/bobrossprofile.jpg);
+  background-size: 100% 100%;
+  border-radius: 30px;
+}
+header .account .username {
+  height: 25px;
+}
+header .account .username p {
+  margin: 12px 0px 0px 10px;
 }/*# sourceMappingURL=style.css.map */

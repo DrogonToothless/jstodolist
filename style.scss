@@ -3,10 +3,41 @@
     margin: 0;
     box-sizing: border-box;
 }
-.header {
+header {
+    margin-top: 20px;
     .logo {
-        width: 250px;
-        height: 100px;
+        width: 200px;
+        height: 80px;
         background-image: url(images/post-itlogo.png);
+        background-size: 100% 100%;
+    }
+    .search {
+        width: 700px;
+        height: 50px;
+        margin-top: 15px;
+        #pagesearch {
+            border: 1px solid variables.$lightgray;
+            border-radius: 30px;
+        }
+    }
+    .account {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        border-left: 1px solid variables.$gray;
+        .profile-picture {
+            width: 50px;
+            aspect-ratio: 1/1;
+            background-image: url(images/bobrossprofile.jpg);
+            background-size: 100% 100%;
+            border-radius: 30px;
+        }
+        .username {
+            
+            height: 25px;
+            p {
+                margin: 12px 0px 0px 10px;
+            }
+        }
     }
 }
