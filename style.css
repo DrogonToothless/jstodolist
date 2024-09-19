@@ -1,3 +1,7 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,6 +16,7 @@ header .logo {
   height: 80px;
   background-image: url(images/post-itlogo.png);
   background-size: 100% 100%;
+  margin-bottom: 15px;
 }
 header .search {
   width: 700px;
@@ -42,4 +47,40 @@ header .account .username {
 }
 header .account .username p {
   margin: 12px 0px 0px 10px;
+}
+
+.content {
+  display: grid;
+  grid-template-areas: "lists list";
+}
+.content .lists {
+  grid-area: lists;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.content .lists .lists-title {
+  display: flex;
+  border-bottom: 2px solid rgb(241, 241, 241);
+  justify-content: space-between;
+}
+.content .lists .lists-title h1 {
+  padding-left: 10px;
+}
+.content .lists .lists-title #addlist {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  margin: 7px 0px 0px 10px;
+}
+.content .lists .lists-title #addlist:hover .material-symbols-outlined {
+  font-size: 35px;
+  transition: 0.5s;
+  margin: -3px 0px 0px -3px;
+}
+.content .lists .lists-title #addlist .material-symbols-outlined {
+  font-size: 25px;
+  padding-top: 5px;
 }/*# sourceMappingURL=style.css.map */
