@@ -5,6 +5,7 @@
 
 header {
   margin-top: 20px;
+  border-bottom: 2px solid rgb(241, 241, 241);
 }
 header .logo {
   width: 200px;
@@ -20,12 +21,14 @@ header .search {
 header .search #pagesearch {
   border: 1px solid rgb(241, 241, 241);
   border-radius: 30px;
+  padding-left: 20px;
 }
 header .account {
   height: 50px;
   display: flex;
   justify-content: center;
   border-left: 1px solid rgb(200, 200, 200);
+  margin-top: 15px;
 }
 header .account .profile-picture {
   width: 50px;
