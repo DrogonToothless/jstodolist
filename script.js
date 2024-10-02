@@ -1,7 +1,5 @@
+import domVariables from "./variables.js";
 function addList() {
-    const listsGroup = document.getElementById("lists-group");
-    const newList = document.createElement("div");
-    const listTitle = document.createElement("input");
     listTitle.id = "title-input";
     listsGroup.appendChild(newList);
     newList.appendChild(listTitle);
