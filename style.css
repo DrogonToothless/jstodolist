@@ -78,7 +78,7 @@ header .account .username p {
 .content .lists .lists-title #addlist:hover .material-symbols-outlined {
   font-size: 35px;
   transition: 0.5s;
-  margin: -3px 0px 0px -3px;
+  margin: -4px 0px 0px -5px;
 }
 .content .lists .lists-title #addlist .material-symbols-outlined {
   font-size: 25px;
