@@ -8,61 +8,78 @@ function addList() {
         if (event.key === "Enter") {
             let listName = titleEntry.value.trim();
             if (listName) {
+                let savedLists = JSON.parse(localStorage.getItem("savedlist")) || [];
+                if (savedLists.includes(listName)) {
+                    alert("List name already exists. Please choose a different name.");
+                    return;
+                }
                 let newList = document.createElement("div");
                 newList.className = "list";
                 newList.id = listName;
                 newList.textContent = listName;
                 listsGroup.appendChild(newList);
                 listsGroup.removeChild(titleEntry);
-                localStorage.setItem("savedlist", listName);
-                let savedlist = localStorage.getItem("savedlist");
-                console.log(savedlist);
-                newList.addEventListener("click", toList);
+                savedLists.push(listName);
+                localStorage.setItem("savedlist", JSON.stringify(savedLists));
                 const listBody = document.getElementById("list-body");
                 let mainList = document.createElement("div");
-                mainList.classList = "main-list"
-                const mainListName = listName;
-                mainList.innerHTML = 
-                `
-                <div id="main-list-${listName}">
-                    <h1>${listName}</h1>
-                    <button onclick="createTask()">
-                        <span class="material-symbols-outlined">add</span>
-                    </button>
-                </div>
+                mainList.classList = "main-list";
+                mainList.innerHTML = `
+                    <div id="main-list-${listName}">
+                        <h1>${listName}</h1>
+                        <button onclick="createTask('${listName}')">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+                    </div>
                 `;
                 listBody.appendChild(mainList);
-                localStorage.setItem("savedmainlist", mainListName);
-                let savedmainlist = localStorage.getItem("savedmainlist");
-                console.log(savedmainlist);
-                function toList() {
-                    
-                }
+                let savedMainLists = JSON.parse(localStorage.getItem("savedmainlist")) || [];
+                savedMainLists.push(listName);
+                localStorage.setItem("savedmainlist", JSON.stringify(savedMainLists));
             }
         }
     }
 }
 function retrieveSavedData() {
-    const savedlist = localStorage.getItem("savedlist");
-    const savedmainlist = localStorage.getItem("savedmainlist");
     const listsGroup = document.getElementById("lists-group");
     const listBody = document.getElementById("list-body");
-    if (savedlist && savedmainlist) {
+    let savedLists = [];
+    let savedMainLists = [];
+    try {
+        const rawSavedLists = localStorage.getItem("savedlist");
+        savedLists = rawSavedLists ? JSON.parse(rawSavedLists) : [];
+    } catch (error) {
+        console.error("Invalid JSON in savedlist. Resetting data.", error);
+        localStorage.removeItem('savedlist');
+        savedLists = [];
+    }
+    try {
+        const rawSavedMainLists = localStorage.getItem("savedmainlist");
+        savedMainLists = rawSavedMainLists ? JSON.parse(rawSavedMainLists) : [];
+    } catch (error) {
+        console.error("Invalid JSON in savedmainlist. Resetting data.", error);
+        localStorage.removeItem('savedmainlist');
+        savedMainLists = [];
+    }
+    savedLists.forEach(listName => {
         let retrievedList = document.createElement("div");
         retrievedList.className = "list";
-        retrievedList.id = savedlist;
-        retrievedList.textContent = savedlist;
+        retrievedList.id = listName;
+        retrievedList.textContent = listName;
         listsGroup.appendChild(retrievedList);
+    });
+    savedMainLists.forEach(mainListName => {
         let retrievedMainList = document.createElement("div");
         retrievedMainList.classList = "main-list";
-        retrievedMainList.innerHTML = 
-        `<div id="main-list-${savedmainlist}">
-            <h1>${savedmainlist}</h1>
-            <button onclick="createTask()">
-                <span class="material-symbols-outlined">add</span>
-            </button>
-        </div>`;
+        retrievedMainList.innerHTML = `
+            <div id="main-list-${mainListName}">
+                <h1>${mainListName}</h1>
+                <button onclick="createTask()">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
+        `;
         listBody.appendChild(retrievedMainList);
-    }
+    });
 }
 document.addEventListener("DOMContentLoaded", retrieveSavedData);
