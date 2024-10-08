@@ -94,6 +94,6 @@ header .account .username p {
   grid-area: list;
   grid-column: 2/span 5;
 }
-.content #list-body .list {
-  height: 90%;
+.content #list-body .main-list {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

@@ -24,13 +24,12 @@ function addList() {
                 const listBody = document.getElementById("list-body");
                 let mainList = document.createElement("div");
                 mainList.classList = "main-list";
+                mainList.id = "main-list" + listName;
                 mainList.innerHTML = `
-                    <div id="main-list-${listName}">
                         <h1>${listName}</h1>
                         <button onclick="createTask('${listName}')">
                             <span class="material-symbols-outlined">add</span>
                         </button>
-                    </div>
                 `;
                 listBody.appendChild(mainList);
                 let savedMainLists = JSON.parse(localStorage.getItem("savedmainlist")) || [];
@@ -71,13 +70,12 @@ function retrieveSavedData() {
     savedMainLists.forEach(mainListName => {
         let retrievedMainList = document.createElement("div");
         retrievedMainList.classList = "main-list";
+        retrievedMainList.id = "main-list-" + mainListName;
         retrievedMainList.innerHTML = `
-            <div id="main-list-${mainListName}">
                 <h1>${mainListName}</h1>
                 <button onclick="createTask()">
                     <span class="material-symbols-outlined">add</span>
                 </button>
-            </div>
         `;
         listBody.appendChild(retrievedMainList);
     });

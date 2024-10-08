@@ -84,7 +84,6 @@ header {
                 .material-symbols-outlined {
                     font-size: 25px;
                     padding-top: 5px;
-                    
                 }
             }
         }
@@ -95,8 +94,8 @@ header {
     #list-body {
         grid-area: list;
         grid-column: 2 / span 5;
-        .list {
-            height: 90%;
+        .main-list {
+            width: 100%;
         }
     }
 }
