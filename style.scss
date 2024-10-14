@@ -94,11 +94,8 @@ header {
     #list-body {
         grid-area: list;
         grid-column: 2 / span 5;
-        .main-list {
+        .list {
             width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
             h1 {
                 font-size: 40px;
             }
@@ -115,6 +112,7 @@ header {
                     padding-top: 5px;
                 }
             }
+            
         }
     }
 }

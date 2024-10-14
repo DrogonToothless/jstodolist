@@ -94,25 +94,22 @@ header .account .username p {
   grid-area: list;
   grid-column: 2/span 5;
 }
-.content #list-body .main-list {
+.content #list-body .list {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
-.content #list-body .main-list h1 {
+.content #list-body .list h1 {
   font-size: 40px;
 }
-.content #list-body .main-list button {
+.content #list-body .list button {
   border: none;
   background-color: rgb(255, 255, 255);
 }
-.content #list-body .main-list button:hover .material-symbols-outlined {
+.content #list-body .list button:hover .material-symbols-outlined {
   font-size: 35px;
   transition: 0.5s;
   margin: -4px 0px 0px -5px;
 }
-.content #list-body .main-list button .material-symbols-outlined {
+.content #list-body .list button .material-symbols-outlined {
   font-size: 25px;
   padding-top: 5px;
 }/*# sourceMappingURL=style.css.map */
