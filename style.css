@@ -93,12 +93,17 @@ header .account .username p {
 .content #list-body {
   grid-area: list;
   grid-column: 2/span 5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .content #list-body .list {
-  width: 100%;
+  width: 300px;
+  border-bottom: 1px solid rgb(241, 241, 241);
 }
 .content #list-body .list h1 {
   font-size: 40px;
+  text-align: center;
 }
 .content #list-body .list button {
   border: none;
@@ -112,4 +117,15 @@ header .account .username p {
 .content #list-body .list button .material-symbols-outlined {
   font-size: 25px;
   padding-top: 5px;
+}
+.content #list-body .list ul {
+  list-style-type: none;
+}
+.content #list-body .list ul li {
+  position: relative;
+  padding-bottom: 10px;
+}
+.content #list-body .list ul li button {
+  position: absolute;
+  top: -6px;
 }/*# sourceMappingURL=style.css.map */
