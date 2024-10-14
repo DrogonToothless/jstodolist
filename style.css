@@ -41,6 +41,7 @@ header .account .profile-picture {
   background-image: url(images/bobrossprofile.jpg);
   background-size: 100% 100%;
   border-radius: 30px;
+  margin-left: 10px;
 }
 header .account .username {
   height: 25px;
